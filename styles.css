@@ -1,0 +1,82 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #f8f8f8;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+  }
+  
+  .game-container {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    max-width: 1200px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .game-content {
+    text-align: center;
+    flex: 1;
+  }
+  
+  .pasta {
+    width: 100px;
+    height: 100px;
+    background: url('images/pasta.jpg') no-repeat center/contain;
+    margin: 20px auto;
+    cursor: pointer;
+  }
+  
+  .score {
+    font-size: 24px;
+    margin: 10px 0;
+  }
+  
+  .side-panel {
+    width: 200px;
+    padding: 10px;
+    background: #f9f9f9;
+    border-left: 2px solid #ddd;
+  }
+  
+  .side-panel h2 {
+    font-size: 20px;
+    margin-bottom: 10px;
+  }
+  
+  #upgradeList {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  #upgradeList li {
+    background: #e0e0e0;
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+  }
+  
+  .upgrade-button {
+    width: 100%;
+    padding: 10px;
+    background: #ff6347;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .upgrade-button:hover:not(.disabled) {
+    background: #ff4500;
+  }
+  
+  .upgrade-button.disabled {
+    background: #ccc;
+    cursor: not-allowed;
+  }
+  
