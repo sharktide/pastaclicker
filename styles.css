@@ -109,6 +109,6 @@ h1 {
     width: 50px;
     height: 50px;
     background: url('images/pasta.jpg') no-repeat center/contain;
-    animation: pastaRain 3s linear infinite;
+    animation: pastaRain 3s linear;
     z-index: 1000;
 }
