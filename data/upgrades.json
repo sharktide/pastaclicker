@@ -1,7 +1,10 @@
 {
-    "names": [
-        {"1": "Paper Plate"},
-        {"2": "Plastic Plate"},
-        {"3": "Glass Plate"}
-    ]
+  "names": [
+    {"1": "Paper Plate", "type": "click", "value": 1},
+    {"2": "Plastic Plate", "type": "click", "value": 5},
+    {"3": "Glass Plate", "type": "click", "value": 10},
+    {"4": "Cook Helper", "type": "cps", "value": 1},
+    {"5": "Chef Assistant", "type": "cps", "value": 5},
+    {"6": "Master Chef", "type": "cps", "value": 10}
+  ]
 }

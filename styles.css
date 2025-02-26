@@ -6,62 +6,75 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-  }
-  
-  .game-container {
+    overflow: hidden; /* Prevent scrolling */
+}
+
+.game-container {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 80%;
     max-width: 1200px;
     background: #fff;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .game-content {
+}
+
+.game-content {
     text-align: center;
     flex: 1;
-  }
-  
-  .pasta {
-    width: 100px;
-    height: 100px;
+}
+
+h1 {
+    text-align: left; /* Align "Pasta Clicker" text to the left */
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+.pasta {
+    width: 120px;
+    height: 120px;
     background: url('images/pasta.jpg') no-repeat center/contain;
     margin: 20px auto;
     cursor: pointer;
-  }
-  
-  .score {
+    transition: transform 0.2s ease-in-out;
+}
+
+.pasta:hover {
+    transform: scale(1.1);
+}
+
+.score {
     font-size: 24px;
     margin: 10px 0;
-  }
-  
-  .side-panel {
+}
+
+.side-panel {
     width: 200px;
     padding: 10px;
     background: #f9f9f9;
     border-left: 2px solid #ddd;
-  }
-  
-  .side-panel h2 {
+}
+
+.side-panel h2 {
     font-size: 20px;
     margin-bottom: 10px;
-  }
-  
-  #upgradeList {
+}
+
+#upgradeList {
     list-style-type: none;
     padding: 0;
-  }
-  
-  #upgradeList li {
+}
+
+#upgradeList li {
     background: #e0e0e0;
     margin: 5px 0;
     padding: 10px;
     border-radius: 5px;
-  }
-  
-  .upgrade-button {
+}
+
+.upgrade-button {
     width: 100%;
     padding: 10px;
     background: #ff6347;
@@ -69,14 +82,33 @@ body {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
-  
-  .upgrade-button:hover:not(.disabled) {
+}
+
+.upgrade-button:hover:not(.disabled) {
     background: #ff4500;
-  }
-  
-  .upgrade-button.disabled {
+}
+
+.upgrade-button.disabled {
     background: #ccc;
     cursor: not-allowed;
-  }
-  
+}
+
+@keyframes pastaRain {
+    0% {
+        top: -50px;
+        opacity: 1;
+    }
+    100% {
+        top: 100vh;
+        opacity: 0;
+    }
+}
+
+.pasta-rain {
+    position: fixed; /* Fixed positioning to stay in the viewport */
+    width: 50px;
+    height: 50px;
+    background: url('images/pasta.jpg') no-repeat center/contain;
+    animation: pastaRain 3s linear infinite;
+    z-index: 1000;
+}
