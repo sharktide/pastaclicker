@@ -41,8 +41,11 @@ h1 {
     transition: transform 0.2s ease-in-out;
 }
 
-.pasta:hover {
-    transform: scale(1.1);
+#pasta:hover {
+    transform: scale(1.4);
+}
+#pasta:active {
+    transform: scale(1.6);
 }
 
 .score {
