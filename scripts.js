@@ -3,25 +3,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const scoreDisplay = document.getElementById('score');
     const pointsPerClickDisplay = document.getElementById('pointsPerClick');
     const pointsPerSecondDisplay = document.getElementById('pointsPerSecond');
+    const multiplierDisplay = document.getElementById('multiplier');
     const upgradeButtons = document.querySelectorAll('.upgrade-button');
   
     let score = localStorage.getItem('score') ? parseInt(localStorage.getItem('score')) : 0;
     let pointsPerClick = localStorage.getItem('pointsPerClick') ? parseInt(localStorage.getItem('pointsPerClick')) : 1;
+    let multiplier = localStorage.getItem('multiplier') ? parseFloat(localStorage.getItem('multiplier')) : 1.00;
     let pointsPerSecond = localStorage.getItem('pointsPerSecond') ? parseInt(localStorage.getItem('pointsPerSecond')) : 0;
   
     scoreDisplay.textContent = score;
     pointsPerClickDisplay.textContent = pointsPerClick;
+    multiplierDisplay.textContent = multiplier;
     pointsPerSecondDisplay.textContent = pointsPerSecond;
   
     pasta.addEventListener('click', () => {
-      score += pointsPerClick;
+      score += Math.floor(pointsPerClick * multiplier);
       scoreDisplay.textContent = score;
       localStorage.setItem('score', score);
       updateUpgradeButtons();
-      createPastaRain(); // Trigger pasta rain when clicked
+      createPastaRain();
     });
   
-    // Automatically add points per second
     setInterval(() => {
       score += pointsPerSecond;
       scoreDisplay.textContent = score;
@@ -29,7 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
       updateUpgradeButtons();
     }, 1000);
   
-    // Fetch the upgrade names from the JSON file
     fetch('data/upgrades.json')
       .then(response => response.json())
       .then(data => {
@@ -38,7 +39,6 @@ document.addEventListener('DOMContentLoaded', () => {
           const upgradeInfo = data.names.find(name => name[upgradeId]);
           const upgradeName = upgradeInfo[upgradeId];
   
-          // Initialize level and cost from localStorage
           const storedLevel = localStorage.getItem(`upgradeLevel-${upgradeId}`);
           const level = storedLevel ? parseInt(storedLevel) : 1;
           const cost = localStorage.getItem(`upgradeCost-${upgradeId}`) ? parseInt(localStorage.getItem(`upgradeCost-${upgradeId}`)) : button.getAttribute('data-cost');
@@ -61,6 +61,20 @@ document.addEventListener('DOMContentLoaded', () => {
     function setupUpgradeButtons(data) {
       upgradeButtons.forEach(button => {
         const upgradeValue = parseInt(button.getAttribute('data-upgrade'));
+
+        switch (parseInt(button.getAttribute('data-type'))) {
+          case 1:
+            button.classList.add('reg-upg')
+            break
+          case 2:
+            button.classList.add('cps-upg')
+            break
+          case 3:
+            button.classList.add('mpc-upg')
+          default:
+            button.classList.add('reg-upg')
+            break
+        }
   
         button.addEventListener('click', () => {
           let cost = parseInt(button.getAttribute('data-cost'));
@@ -81,7 +95,12 @@ document.addEventListener('DOMContentLoaded', () => {
               pointsPerSecond += upgradeInfo.value;
               pointsPerSecondDisplay.textContent = pointsPerSecond;
               localStorage.setItem('pointsPerSecond', pointsPerSecond);
+            } else if (upgradeInfo.type === 'mpc') {
+              multiplier += (upgradeInfo.value / 5);
+              multiplierDisplay.textContent = multiplier;
+              localStorage.setItem('multiplier', multiplier);
             }
+            
             scoreDisplay.textContent = score;
             localStorage.setItem('score', score);
             localStorage.setItem('pointsPerClick', pointsPerClick);
@@ -104,8 +123,8 @@ document.addEventListener('DOMContentLoaded', () => {
             button.classList.add('disabled');
             button.textContent = `Max Level Reached`;
             localStorage.setItem(`upgradeLevel-${button.getAttribute('id')}`, 6); // Ensure it stays disabled
+            location.reload(true)
           }
-  
           updateUpgradeButtons();
         });
       });
@@ -146,4 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
             pastaRain.remove();
         });
     }
+    document.getElementById('gotoinfo').addEventListener('click', function() {
+      window.location.href = '/info'
+    })
 });

@@ -6,9 +6,12 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    overflow: hidden; /* Prevent scrolling */
 }
-
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
 .game-container {
     display: flex;
     justify-content: space-between;
@@ -29,6 +32,12 @@ body {
 h1 {
     text-align: left; /* Align "Pasta Clicker" text to the left */
     font-size: 36px;
+    margin-bottom: 20px;
+}
+
+details {
+    text-align: left; /* Align "Pasta Clicker" text to the left */
+    font-size: 18px;
     margin-bottom: 20px;
 }
 
@@ -55,9 +64,11 @@ h1 {
 
 .side-panel {
     width: 200px;
+    max-height: 400px;
     padding: 10px;
     background: #f9f9f9;
     border-left: 2px solid #ddd;
+    overflow: scroll;
 }
 
 .side-panel h2 {
@@ -77,7 +88,7 @@ h1 {
     border-radius: 5px;
 }
 
-.upgrade-button {
+.upgrade-button.reg-upg {
     width: 100%;
     padding: 10px;
     background: #ff6347;
@@ -86,9 +97,32 @@ h1 {
     border-radius: 5px;
     cursor: pointer;
 }
-
-.upgrade-button:hover:not(.disabled) {
+.upgrade-button.cps-upg {
+    width: 100%;
+    padding: 10px;
+    background: #47c8ff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.upgrade-button.mpc-upg {
+    width: 100%;
+    padding: 10px;
+    background: #35dc75;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.upgrade-button.reg-upg:hover:not(.disabled) {
     background: #ff4500;
+}
+.upgrade-button.cps-upg:hover:not(.disabled) {
+    background: #77baf0;
+}
+.upgrade-button.mpc-upg:hover:not(.disabled) {
+    background: #38b768;
 }
 
 .upgrade-button.disabled {

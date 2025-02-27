@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pasta Clicker</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div>
+        <h1>Pasta Clicker</h1>
+        <p>How to play</p>
+        <p>Each upgrade has 5 levels and each level costs 1.5 times the subsequent level.</p>
+        </div>
+        <div>
+        <details><summary>Types of Upgrades</summary>
+            <li>Red-orange - Pasta Per Click Upgrades</li>
+            <li>Blue - Auto pasta per second</li>
+            <li>Green - Multipliers per click</li>
+        </details>
+        </div>
+        <div>
+        <details><summary>List of upgrades</summary>
+            <li>Red-orange - Paper Plate: +1 pasta per click per level</li>
+            <li>Red-orange- Plastic Plate: +5 pasta per click per level</li>
+            <li>Red-orange - Glass Plate: +10 pasta per click per level</li>
+            <li>Blue - Cook Helper: +1 pasta per second per level</li>
+            <li>Blue - Chef Assistant: +5 pasta per second per level</li>
+            <li>Blue - Master Chef: +10 pasta per second per level</li>
+            <li>Green - Fusili: +25% multiplier, +5% for subsequent levels</li>
+            <li>Green - Ravioli: +50% multiplier, +10% for subsequent levels</li>
+        </details>
+        </div>
+        <div>
+            <button id="gotohome">Return to Game</button>
+        </div>
+    </div>
+    <script>
+        document.getElementById('gotohome').addEventListener('click', function() {
+            window.location.href = '/'
+        })
+    </script>
+    <style>
+        p, li {
+            margin-bottom: 20px;
+        }
+    </style>
+</body>
+</html>

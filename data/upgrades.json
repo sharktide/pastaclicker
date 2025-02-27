@@ -5,6 +5,9 @@
     {"3": "Glass Plate", "type": "click", "value": 10},
     {"4": "Cook Helper", "type": "cps", "value": 1},
     {"5": "Chef Assistant", "type": "cps", "value": 5},
-    {"6": "Master Chef", "type": "cps", "value": 10}
+    {"6": "Master Chef", "type": "cps", "value": 10},
+    {"7": "Fusili", "type": "mpc", "value": 0.25},
+    {"8": "Ravioli", "type": "mpc", "value": 0.5}
+
   ]
 }
