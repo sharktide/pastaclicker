@@ -166,6 +166,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
     document.getElementById('gotoinfo').addEventListener('click', function() {
-      window.location.href = '/info'
+      window.location.href = '/pastaclicker/info'
     })
 });
