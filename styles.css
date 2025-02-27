@@ -44,7 +44,7 @@ details {
 .pasta {
     width: 120px;
     height: 120px;
-    background: url('images/pasta.jpg') no-repeat center/contain;
+    background: url('images/pasta.png') no-repeat center/contain;
     margin: 20px auto;
     cursor: pointer;
     transition: transform 0.2s ease-in-out;
@@ -145,7 +145,7 @@ details {
     position: fixed; /* Fixed positioning to stay in the viewport */
     width: 50px;
     height: 50px;
-    background: url('images/pasta.jpg') no-repeat center/contain;
+    background: url('images/pasta.png') no-repeat center/contain;
     animation: pastaRain 3s linear;
     z-index: 1000;
 }
