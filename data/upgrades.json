@@ -7,7 +7,7 @@
     {"5": "Chef Assistant", "type": "cps", "value": 5},
     {"6": "Master Chef", "type": "cps", "value": 10},
     {"7": "Fusili", "type": "mpc", "value": 0.25},
-    {"8": "Ravioli", "type": "mpc", "value": 0.5}
-
+    {"8": "Ravioli", "type": "mpc", "value": 0.5},
+    {"9": "Penne", "type": "mpc", "value": 0.75}
   ]
 }
