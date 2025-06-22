@@ -9,6 +9,7 @@
     {"7": "Fusili", "type": "mpc", "value": 0.25},
     {"8": "Ravioli", "type": "mpc", "value": 0.5},
     {"9": "Penne", "type": "mpc", "value": 0.75},
-    {"10": "Bronze Plate", "type": "click", "value": 15}
+    {"10": "Bronze Plate", "type": "click", "value": 15},
+    {"11": "Silver Plate", "type": "click", "value": 35}
   ]
 }
